@@ -10,6 +10,6 @@ Base.metadata.create_all(bind=engine)
 
 app.include_router(jobs.router)
 
-@app.get("/")
+@app.get("/", include_in_schema=False)
 def root():
     return {"message": "PodPilot is running 🚀"}
